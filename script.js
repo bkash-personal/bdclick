@@ -1,0 +1,8 @@
+document.querySelectorAll('a[href^="#"]').forEach(anchor=>{anchor.addEventListener('click',function(e){e.preventDefault();const target=document.querySelector(this.getAttribute('href'));if(target){target.scrollIntoView({behavior:'smooth',block:'start'})}})});
+window.addEventListener('scroll',function(){const navbar=document.querySelector('.navbar');if(window.scrollY>50){navbar.style.background='rgba(15,15,35,0.98)';navbar.style.boxShadow='0 2px 30px rgba(0,0,0,0.4)'}else{navbar.style.background='linear-gradient(135deg,var(--dark) 0%,var(--secondary) 100%)';navbar.style.boxShadow='0 2px 20px rgba(0,0,0,0.3)'}});
+document.querySelectorAll('.toggle-password').forEach(toggle=>{toggle.addEventListener('click',function(){const input=this.parentElement.querySelector('input');const type=input.getAttribute('type')==='password'?'text':'password';input.setAttribute('type',type);this.classList.toggle('fa-eye-slash')})});
+document.addEventListener('DOMContentLoaded',function(){const loginForm=document.getElementById('loginForm');if(loginForm){loginForm.addEventListener('submit',function(e){e.preventDefault();alert('লগইন ফর্ম সাবমিট হয়েছে!')})}
+const signupForm=document.getElementById('signupForm');if(signupForm){signupForm.addEventListener('submit',function(e){e.preventDefault();alert('রেজিস্ট্রেশন সফল হয়েছি!')})}
+const contactForm=document.getElementById('contactForm');if(contactForm){contactForm.addEventListener('submit',function(e){e.preventDefault();alert('ধন্যবাদ! আপনার মেসেজ পাঠানো হয়েছে।');this.reset()})}});
+console.log('%c BDClick - SMM Panel ','background:#e31837;color:white;font-size:20px;padding:10px;');
+console.log('%c বাংলাদেশের সেরা SMM প্যানেল ','color:#e31837;font-size:14px;');
