@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - BDClick</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">BD<span>Click</span></a>
+            <div class="nav-links">
+                <a href="index.html">হোম</a>
+                <a href="services.html">সার্ভিস</a>
+                <a href="pricing.html">মূল্য</a>
+                <a href="about.html">আমাদের সম্পর্কে</a>
+                <a href="contact.html">যোগাযোগ</a>
+            </div>
+            <div class="nav-buttons">
+                <a href="login.html" class="btn btn-outline">লগইন</a>
+                <a href="signup.html" class="btn btn-primary">রেজিস্টার</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="auth-section">
+        <div class="auth-container">
+            <div class="auth-card">
+                <div class="auth-header">
+                    <h1>আপনার একাউন্টে লগইন করুন</h1>
+                    <p>আপনার SMM প্যানেল ব্যবহার শুরু করুন</p>
+                </div>
+                
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label>ইমেইল বা ইউজারনেম</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-user"></i>
+                            <input type="text" placeholder="আপনার ইমেইল" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>পাসওয়ার্ড</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" placeholder="আপনার পাসওয়ার্ড" required>
+                            <i class="fas fa-eye toggle-password"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="form-options">
+                        <label class="checkbox-label">
+                            <input type="checkbox">
+                            <span>মনে রাখুন</span>
+                        </label>
+                        <a href="#" class="forgot-link">পাসওয়ার্ড ভুলে গেছেন?</a>
+                    </div>
+                    
+                    <button type="submit" class="btn-auth">
+                        <i class="fas fa-sign-in-alt"></i> লগইন করুন
+                    </button>
+                </form>
+                
+                <div class="auth-divider"><span>অথবা</span></div>
+                
+                <button class="btn-social">
+                    <img src="https://www.google.com/favicon.ico" alt="Google">
+                    গুগল দিয়ে সাইন ইন করুন
+                </button>
+                
+                <p class="auth-footer">
+                    একাউন্ট নেই? <a href="signup.html">নতুন একাউন্ট তৈরি করুন</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-about">
+                <h3>BD<span>Click</span></h3>
+                <p>বাংলাদেশের সেরা SMM প্যানেল।</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© ২০২৫ BDClick</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
