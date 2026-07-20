@@ -1,0 +1,1470 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BDSocialPro - Best SMM Panel in Bangladesh</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #e31837;
+            --primary-dark: #b8142e;
+            --secondary: #1a1a2e;
+            --accent: #00d4aa;
+            --dark: #0f0f23;
+            --light: #f8f9fc;
+            --gray: #6c757d;
+        }
+
+        body {
+            font-family: 'Noto Sans Bengali', sans-serif;
+            background: var(--light);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--secondary) 100%);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-family: 'Noto Sans Bengali', sans-serif;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: #fff;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(227, 24, 55, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--secondary) 50%, #16213e 100%);
+            padding: 180px 0 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(227, 24, 55, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(0, 212, 170, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            color: #fff;
+            line-height: 1.3;
+            margin-bottom: 20px;
+        }
+
+        .hero-content h1 span {
+            color: var(--primary);
+        }
+
+        .hero-content p {
+            color: #b0b0b0;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--accent);
+        }
+
+        .stat-label {
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        /* Login Card */
+        .login-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .login-card h2 {
+            color: var(--dark);
+            margin-bottom: 10px;
+            font-size: 1.8rem;
+        }
+
+        .login-card p {
+            color: var(--gray);
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            color: var(--dark);
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-family: 'Noto Sans Bengali', sans-serif;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .remember-forgot {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .remember-me input {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--primary);
+        }
+
+        .forgot-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .btn-login {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Noto Sans Bengali', sans-serif;
+        }
+
+        .btn-login:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(227, 24, 55, 0.3);
+        }
+
+        .divider {
+            text-align: center;
+            margin: 25px 0;
+            position: relative;
+        }
+
+        .divider::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: #e0e0e0;
+        }
+
+        .divider span {
+            background: #fff;
+            padding: 0 15px;
+            position: relative;
+            color: var(--gray);
+        }
+
+        .btn-google {
+            width: 100%;
+            padding: 15px;
+            background: #fff;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.3s;
+            font-family: 'Noto Sans Bengali', sans-serif;
+        }
+
+        .btn-google:hover {
+            border-color: var(--primary);
+            background: #fef8f8;
+        }
+
+        .signup-link {
+            text-align: center;
+            margin-top: 25px;
+            color: var(--gray);
+        }
+
+        .signup-link a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 100px 0;
+            background: var(--light);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .service-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 35px;
+            text-align: center;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.08);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 50px rgba(227, 24, 55, 0.15);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+            font-size: 2.5rem;
+        }
+
+        .facebook-icon { background: linear-gradient(135deg, #1877f2 0%, #0d65d9 100%); color: #fff; }
+        .instagram-icon { background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); color: #fff; }
+        .youtube-icon { background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%); color: #fff; }
+        .tiktok-icon { background: linear-gradient(135deg, #00f2ea 0%, #ff0050 100%); color: #fff; }
+        .twitter-icon { background: linear-gradient(135deg, #1da1f2 0%, #0d8ecf 100%); color: #fff; }
+        .telegram-icon { background: linear-gradient(135deg, #0088cc 0%, #005fa3 100%); color: #fff; }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            color: var(--gray);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .service-features {
+            text-align: left;
+            margin-top: 15px;
+        }
+
+        .service-features li {
+            list-style: none;
+            padding: 8px 0;
+            color: var(--dark);
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .service-features li i {
+            color: var(--accent);
+        }
+
+        /* How It Works */
+        .how-it-works {
+            padding: 100px 0;
+            background: var(--dark);
+            position: relative;
+        }
+
+        .how-it-works .section-title h2 {
+            color: #fff;
+        }
+
+        .how-it-works .section-title p {
+            color: #888;
+        }
+
+        .steps-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            position: relative;
+        }
+
+        .step-card {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-number {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 25px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #fff;
+        }
+
+        .step-card h3 {
+            color: #fff;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .step-card p {
+            color: #888;
+            font-size: 0.95rem;
+        }
+
+        .step-connector {
+            position: absolute;
+            top: 35px;
+            left: calc(25% + 35px);
+            width: calc(50% - 35px);
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 100px 0;
+            background: var(--light);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .feature-card {
+            background: #fff;
+            padding: 35px;
+            border-radius: 20px;
+            display: flex;
+            gap: 25px;
+            align-items: flex-start;
+            transition: all 0.3s;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.05);
+        }
+
+        .feature-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            min-width: 70px;
+            background: linear-gradient(135deg, rgba(227, 24, 55, 0.1) 0%, rgba(227, 24, 55, 0.05) 100%);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+
+        .feature-content h3 {
+            font-size: 1.3rem;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+
+        .feature-content p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--dark) 0%, var(--secondary) 100%);
+        }
+
+        .pricing .section-title h2 {
+            color: #fff;
+        }
+
+        .pricing .section-title p {
+            color: #888;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .pricing-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            padding: 40px;
+            text-align: center;
+            transition: all 0.3s;
+            backdrop-filter: blur(10px);
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .pricing-card.featured {
+            border-color: var(--primary);
+            background: linear-gradient(135deg, rgba(227, 24, 55, 0.2) 0%, rgba(227, 24, 55, 0.1) 100%);
+            position: relative;
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
+            color: #fff;
+            padding: 5px 20px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .pricing-card h3 {
+            color: #fff;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .pricing-card .price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--accent);
+            margin: 20px 0;
+        }
+
+        .pricing-card .price span {
+            font-size: 1rem;
+            color: #888;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin: 30px 0;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            color: #ccc;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .pricing-features li i {
+            color: var(--accent);
+        }
+
+        .btn-pricing {
+            width: 100%;
+            padding: 15px;
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Noto Sans Bengali', sans-serif;
+        }
+
+        .btn-pricing:hover {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .pricing-card.featured .btn-pricing {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        /* Payment Methods */
+        .payment-section {
+            padding: 60px 0;
+            background: #fff;
+        }
+
+        .payment-methods {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .payment-item {
+            text-align: center;
+        }
+
+        .payment-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--light);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+            font-size: 2rem;
+        }
+
+        .payment-item span {
+            color: var(--dark);
+            font-weight: 600;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background: var(--light);
+        }
+
+        .contact-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        .contact-info h2 {
+            font-size: 2rem;
+            color: var(--dark);
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            color: var(--gray);
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        .contact-icon {
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1.3rem;
+        }
+
+        .contact-text h4 {
+            color: var(--dark);
+            margin-bottom: 5px;
+        }
+
+        .contact-text p {
+            margin: 0;
+            color: var(--gray);
+        }
+
+        .contact-form {
+            background: #fff;
+            padding: 40px;
+            border-radius: 25px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+        }
+
+        .contact-form h3 {
+            font-size: 1.5rem;
+            color: var(--dark);
+            margin-bottom: 25px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1rem;
+            margin-bottom: 20px;
+            font-family: 'Noto Sans Bengali', sans-serif;
+            transition: border-color 0.3s;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .contact-form textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            padding: 60px 0 30px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 50px;
+        }
+
+        .footer-about h3 {
+            font-size: 1.8rem;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .footer-about h3 span {
+            color: var(--primary);
+        }
+
+        .footer-about p {
+            color: #888;
+            margin-bottom: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .footer-column h4 {
+            color: #fff;
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 12px;
+        }
+
+        .footer-column a {
+            color: #888;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-column a:hover {
+            color: var(--primary);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 50px auto 0;
+            padding: 25px 20px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: #666;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+            }
+
+            .steps-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .step-connector {
+                display: none;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .nav-buttons {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-stats {
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+
+            .steps-container {
+                grid-template-columns: 1fr;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">BD<span>Social</span>Pro</a>
+            <div class="nav-links">
+                <a href="#services">সার্ভিস</a>
+                <a href="#how-it-works">কিভাবে কাজ করে</a>
+                <a href="#pricing">মূল্য তালিকা</a>
+                <a href="#contact">যোগাযোগ</a>
+            </div>
+            <div class="nav-buttons">
+                <a href="#" class="btn btn-outline">লগইন</a>
+                <a href="#" class="btn btn-primary">রেজিস্টার</a>
+            </div>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>বাংলাদেশের <span>সেরা SMM Panel</span> - দ্রুততম ও সেরা মূল্যে</h1>
+                <p>আমরা আপনার ব্যবসার জন্য সেরা বুস্টিং প্যানেল প্রদান করি। সামাজিক মিডিয়ায় দ্রুত ও নিরাপদ ফলোয়ার, লাইক, ভিউ বাড়ান সহজেই। বিকাশ, নগদ, রকেট দিয়ে পেমেন্ট করুন।</p>
+                <a href="#" class="btn btn-primary">এখনই শুরু করুন</a>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">10K+</div>
+                        <div class="stat-label">অর্ডার সম্পন্ন</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">5K+</div>
+                        <div class="stat-label">সার্ভিস</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">8K+</div>
+                        <div class="stat-label">ব্যবহারকারী</div>
+                    </div>
+                </div>
+            </div>
+            <div class="login-card">
+                <h2>স্বাগতম!</h2>
+                <p>আপনার একাউন্টে লগইন করুন</p>
+                <form>
+                    <div class="form-group">
+                        <label>ইমেইল অ্যাড্রেস</label>
+                        <input type="email" placeholder="আপনার ইমেইল লিখুন" required>
+                    </div>
+                    <div class="form-group">
+                        <label>পাসওয়ার্ড</label>
+                        <input type="password" placeholder="আপনার পাসওয়ার্ড লিখুন" required>
+                    </div>
+                    <div class="remember-forgot">
+                        <div class="remember-me">
+                            <input type="checkbox" id="remember">
+                            <label for="remember">মনে রাখুন</label>
+                        </div>
+                        <a href="#" class="forgot-link">পাসওয়ার্ড ভুলে গেছেন?</a>
+                    </div>
+                    <button type="submit" class="btn-login">লগইন করুন</button>
+                </form>
+                <div class="divider"><span>অথবা</span></div>
+                <button class="btn-google">
+                    <img src="https://www.google.com/favicon.ico" alt="Google" width="20">
+                    গুগল দিয়ে সাইন ইন করুন
+                </button>
+                <p class="signup-link">
+                    একাউন্ট নেই? <a href="#">সাইন আপ করুন</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="section-title">
+            <h2>আমাদের SMM সার্ভিস</h2>
+            <p>সকল প্রধান সোশ্যাল মিডিয়া প্লাটফর্মে আপনার প্রোফাইল বৃদ্ধি করুন</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon facebook-icon">
+                    <i class="fab fa-facebook-f"></i>
+                </div>
+                <h3>Facebook SMM</h3>
+                <p>পেজ লাইক, পোস্ট লাইক, ফলোয়ার, ভিউ, শেয়ার বাড়ান</p>
+                <ul class="service-features">
+                    <li><i class="fas fa-check-circle"></i> রিয়েল লাইক ও ফলোয়ার</li>
+                    <li><i class="fas fa-check-circle"></i> ইনস্ট্যান্ট ডেলিভারি</li>
+                    <li><i class="fas fa-check-circle"></i> নিরাপদ ও বিশ্বস্ত</li>
+                </ul>
+                <a href="#" class="btn btn-primary" style="margin-top: 20px;">বিস্তারিত দেখুন</a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon instagram-icon">
+                    <i class="fab fa-instagram"></i>
+                </div>
+                <h3>Instagram SMM</h3>
+                <p>ফলোয়ার, লাইক, ভিউ, রিলস ইনগেজমেন্ট বাড়ান</p>
+                <ul class="service-features">
+                    <li><i class="fas fa-check-circle"></i> হাই কোয়ালিটি ফলোয়ার</li>
+                    <li><i class="fas fa-check-circle"></i> ৮৫%+ রিটেনশন</li>
+                    <li><i class="fas fa-check-circle"></i> দ্রুত ডেলিভারি</li>
+                </ul>
+                <a href="#" class="btn btn-primary" style="margin-top: 20px;">বিস্তারিত দেখুন</a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon youtube-icon">
+                    <i class="fab fa-youtube"></i>
+                </div>
+                <h3>YouTube SMM</h3>
+                <p>সাবস্ক্রাইবার, ভিউ, ওয়াচটাইম, লাইক বাড়ান</p>
+                <ul class="service-features">
+                    <li><i class="fas fa-check-circle"></i> রিয়েল সাবস্ক্রাইবার</li>
+                    <li><i class="fas fa-check-circle"></i> মনেটাইজেশন সাহায্য</li>
+                    <li><i class="fas fa-check-circle"></i> নিরাপদ ডেলিভারি</li>
+                </ul>
+                <a href="#" class="btn btn-primary" style="margin-top: 20px;">বিস্তারিত দেখুন</a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon tiktok-icon">
+                    <i class="fab fa-tiktok"></i>
+                </div>
+                <h3>TikTok SMM</h3>
+                <p>ফলোয়ার, ভিউ, লাইক, শেয়ার বাড়ান</p>
+                <ul class="service-features">
+                    <li><i class="fas fa-check-circle"></i> ভাইরাল হওয়ার সুযোগ</li>
+                    <li><i class="fas fa-check-circle"></i> For You পেজ</li>
+                    <li><i class="fas fa-check-circle"></i> দ্রুত গ্রোথ</li>
+                </ul>
+                <a href="#" class="btn btn-primary" style="margin-top: 20px;">বিস্তারিত দেখুন</a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon twitter-icon">
+                    <i class="fab fa-twitter"></i>
+                </div>
+                <h3>Twitter / X SMM</h3>
+                <p>ফলোয়ার, রিটুইট, লাইক, ইম্প্রেশন বাড়ান</p>
+                <ul class="service-features">
+                    <li><i class="fas fa-check-circle"></i> ভেরিফাইড লুক</li>
+                    <li><i class="fas fa-check-circle"></i> ট্রেন্ডিং সাহায্য</li>
+                    <li><i class="fas fa-check-circle"></i> প্রফেশনাল গ্রোথ</li>
+                </ul>
+                <a href="#" class="btn btn-primary" style="margin-top: 20px;">বিস্তারিত দেখুন</a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon telegram-icon">
+                    <i class="fab fa-telegram-plane"></i>
+                </div>
+                <h3>Telegram SMM</h3>
+                <p>মেম্বার, ভিউ, রিঅ্যাকশন বাড়ান</p>
+                <ul class="service-features">
+                    <li><i class="fas fa-check-circle"></i> অ্যাক্টিভ মেম্বার</li>
+                    <li><i class="fas fa-check-circle"></i> চ্যানেল গ্রোথ</li>
+                    <li><i class="fas fa-check-circle"></i> এনগেজমেন্ট বুস্ট</li>
+                </ul>
+                <a href="#" class="btn btn-primary" style="margin-top: 20px;">বিস্তারিত দেখুন</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="section-title">
+            <h2>কিভাবে কাজ করে?</h2>
+            <p>মাত্র ৪টি সহজ ধাপে আপনার সোশ্যাল মিডিয়া গ্রোথ শুরু করুন</p>
+        </div>
+        <div class="steps-container">
+            <div class="step-card">
+                <div class="step-number">১</div>
+                <h3>রেজিস্টার করুন</h3>
+                <p>মাত্র ৩০ সেকেন্ডে ফ্রি একাউন্ট তৈরি করুন</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">২</div>
+                <h3>ব্যালেন্স যোগ করুন</h3>
+                <p>বিকাশ, নগদ, রকেট বা পেপ্যাল দিয়ে</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">৩</div>
+                <h3>সার্ভিস সিলেক্ট করুন</h3>
+                <p>আপনার পছন্দের সার্ভিস বেছে নিন</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">৪</div>
+                <h3>অর্ডার দিন ও ট্র্যাক করুন</h3>
+                <p>রিয়েল টাইমে আপনার অর্ডার দেখুন</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="section-title">
+            <h2>কেন আমাদের বেছে নেবেন?</h2>
+            <p>আমরা বাংলাদেশের সেরা SMM প্যানেল প্রদান করি</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <div class="feature-content">
+                    <h3>লাইটনিং-ফাস্ট অর্ডার</h3>
+                    <p>আপনার অর্ডার মাত্র ১-৫ মিনিটে শুরু হবে। অটোমেটিক সিস্টেম তাৎক্ষণিক ডেলিভারি নিশ্চিত করে।</p>
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <div class="feature-content">
+                    <h3>৮৫%+ রিটেনশন রেট</h3>
+                    <p>হাই-কোয়ালিটি ফলোয়ার ও এনগেজমেন্ট প্রদান করি যা দীর্ঘদিন থাকে। ফেক অ্যাকাউন্ট নয়।</p>
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-money-bill-wave"></i>
+                </div>
+                <div class="feature-content">
+                    <h3>সহজ পেমেন্ট</h3>
+                    <p>বিকাশ, নগদ, রকেট দিয়ে সহজে পেমেন্ট করুন। মিনিমাম ডিপোজিট মাত্র ১০০ টাকা।</p>
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-tags"></i>
+                </div>
+                <div class="feature-content">
+                    <h3>স্বচ্ছ মূল্য</h3>
+                    <p>কোনো লুকানো চার্জ নেই। সব মূল্য আগে থেকে দেখুন। যা দেখবেন তাই পাবেন।</p>
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-headset"></i>
+                </div>
+                <div class="feature-content">
+                    <h3>২৪/৭ সাপোর্ট</h3>
+                    <p>বাংলায় সম্পূর্ণ সাপোর্ট। যেকোনো সমস্যায় আমরা সবসময় আপনার পাশে।</p>
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="feature-content">
+                    <h3>রিয়েল গ্রোথ</h3>
+                    <p>অর্গানিক গ্রোথের জন্য প্রাকৃতিক দেখাবে এমন এনগেজমেন্ট দিয়ে থাকি।</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="section-title">
+            <h2>আমাদের প্যাকেজ</h2>
+            <p>আপনার বাজেট অনুযায়ী সেরা প্যাকেজ বেছে নিন</p>
+        </div>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <h3>স্টার্টার</h3>
+                <div class="price">৳৫০০<span>/মাস</span></div>
+                <ul class="pricing-features">
+                    <li><i class="fas fa-check"></i> ৫০০ ফলোয়ার</li>
+                    <li><i class="fas fa-check"></i> ১০০০ লাইক</li>
+                    <li><i class="fas fa-check"></i> ৫০০০ ভিউ</li>
+                    <li><i class="fas fa-check"></i> ইমেইল সাপোর্ট</li>
+                    <li><i class="fas fa-check"></i> ১ প্লাটফর্ম</li>
+                </ul>
+                <button class="btn-pricing">শুরু করুন</button>
+            </div>
+            <div class="pricing-card featured">
+                <span class="popular-badge">সবচেয়ে জনপ্রিয়</span>
+                <h3>প্রফেশনাল</h3>
+                <div class="price">৳১৫০০<span>/মাস</span></div>
+                <ul class="pricing-features">
+                    <li><i class="fas fa-check"></i> ২০০০ ফলোয়ার</li>
+                    <li><i class="fas fa-check"></i> ৫০০০ লাইক</li>
+                    <li><i class="fas fa-check"></i> ২০,০০০ ভিউ</li>
+                    <li><i class="fas fa-check"></i> ২৪/৭ সাপোর্ট</li>
+                    <li><i class="fas fa-check"></i> সকল প্লাটফর্ম</li>
+                </ul>
+                <button class="btn-pricing">শুরু করুন</button>
+            </div>
+            <div class="pricing-card">
+                <h3>এন্টারপ্রাইজ</h3>
+                <div class="price">৳৫০০০<span>/মাস</span></div>
+                <ul class="pricing-features">
+                    <li><i class="fas fa-check"></i> ১০,০০০ ফলোয়ার</li>
+                    <li><i class="fas fa-check"></i> ২৫,০০০ লাইক</li>
+                    <li><i class="fas fa-check"></i> ১,০০,০০০ ভিউ</li>
+                    <li><i class="fas fa-check"></i> VIP সাপোর্ট</li>
+                    <li><i class="fas fa-check"></i> কাস্টম সলিউশন</li>
+                </ul>
+                <button class="btn-pricing">শুরু করুন</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Methods -->
+    <section class="payment-section">
+        <div class="section-title">
+            <h2>পেমেন্ট পদ্ধতি</h2>
+            <p>আপনার সুবিধামতো পেমেন্ট করুন</p>
+        </div>
+        <div class="payment-methods">
+            <div class="payment-item">
+                <div class="payment-icon">💳</div>
+                <span>bKash</span>
+            </div>
+            <div class="payment-item">
+                <div class="payment-icon">💳</div>
+                <span>Nagad</span>
+            </div>
+            <div class="payment-item">
+                <div class="payment-icon">💳</div>
+                <span>Rocket</span>
+            </div>
+            <div class="payment-item">
+                <div class="payment-icon">💳</div>
+                <span>PayPal</span>
+            </div>
+            <div class="payment-item">
+                <div class="payment-icon">💳</div>
+                <span>ব্যাংক ট্রান্সফার</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2>যোগাযোগ করুন</h2>
+                <p>যেকোনো প্রশ্ন বা সহায়তার জন্য আমাদের সাথে যোগাযোগ করুন। আমরা সবসময় আপনার পাশে আছি।</p>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-text">
+                        <h4>ইমেইল</h4>
+                        <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d5a6a0a5a5baa7a195b7b1a6bab6bcb4b9a5a7bafbb6bab8">[email&#160;protected]</a></p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <div class="contact-text">
+                        <h4>WhatsApp</h4>
+                        <p>+880 1XXX-XXXXXX</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="contact-text">
+                        <h4>সাপোর্ট টাইম</h4>
+                        <p>২৪/৭ - সকাল ১০টা থেকে রাত ১০টা</p>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form">
+                <h3>মেসেজ পাঠান</h3>
+                <form>
+                    <input type="text" placeholder="আপনার নাম" required>
+                    <input type="email" placeholder="আপনার ইমেইল" required>
+                    <input type="text" placeholder="বিষয়">
+                    <textarea placeholder="আপনার মেসেজ লিখুন..." required></textarea>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">মেসেজ পাঠান</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-about">
+                <h3>BD<span>Social</span>Pro</h3>
+                <p>বাংলাদেশের সবচেয়ে বিশ্বস্ত ও সেরা SMM প্যানেল। দ্রুত, সস্তা এবং নিরাপদ সোশ্যাল মিডিয়া মার্কেটিং সার্ভিস।</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-telegram-plane"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h4>সার্ভিস</h4>
+                <ul>
+                    <li><a href="#">Facebook SMM</a></li>
+                    <li><a href="#">Instagram SMM</a></li>
+                    <li><a href="#">YouTube SMM</a></li>
+                    <li><a href="#">TikTok SMM</a></li>
+                    <li><a href="#">Twitter SMM</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>কোম্পানি</h4>
+                <ul>
+                    <li><a href="#">আমাদের সম্পর্কে</a></li>
+                    <li><a href="#">ব্লগ</a></li>
+                    <li><a href="#">কেস স্টাডি</a></li>
+                    <li><a href="#">প্রাইভেসি পলিসি</a></li>
+                    <li><a href="#">টার্মস অফ সার্ভিস</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>সাহায্য</h4>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">যোগাযোগ</a></li>
+                    <li><a href="#">রিফান্ড পলিসি</a></li>
+                    <li><a href="#">API ডকুমেন্টেশন</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; ২০২৫ BDSocialPro - বাংলাদেশের সেরা SMM Panel। সর্বস্বত্ব সংরক্ষিত।</p>
+        </div>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(15, 15, 35, 0.98)';
+            } else {
+                navbar.style.background = 'linear-gradient(135deg, var(--dark) 0%, var(--secondary) 100%)';
+            }
+        });
+
+        // Counter animation
+        function animateCounter(element, target) {
+            let current = 0;
+            const increment = target / 50;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    element.textContent = target.toLocaleString() + '+';
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(current).toLocaleString() + '+';
+                }
+            }, 30);
+        }
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
+
+        // Form submission
+        document.querySelector('.login-card form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('লগইন ফর্ম সাবমিট হয়েছে! এটি একটি ডেমো ওয়েবসাইট।');
+        });
+
+        document.querySelector('.contact-form form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('ধন্যবাদ! আপনার মেসেজ পাঠানো হয়েছে।');
+            this.reset();
+        });
+    </script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"1954b47c125f43f8b4338b3c4f804e4f","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a1e0f605dac9f7a2',t:'MTc4NDUzOTk3MQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
